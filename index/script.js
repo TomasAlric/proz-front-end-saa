@@ -12,6 +12,7 @@ function listarAlunos() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${aluno.id}</td>
+          <td><input type="text" id="nome-${aluno.id}" value="${aluno.nome}" disabled></td>
           <td><input type="email" id="email-${aluno.id}" value="${aluno.email}" disabled></td>
           <td><input type="text" id="telefone-${aluno.id}" value="${aluno.telefone}" disabled></td>
           <td><input type="text" id="cpf-${aluno.id}" value="${aluno.cpf}" disabled></td>
