@@ -1,34 +1,9 @@
-// Função para listar os alunos
-function listarAlunos() {
-  fetch("http://localhost:5000/alunos")
-    .then((response) => response.json())
-    .then((data) => {
-      const alunosList = document.getElementById("alunos-lista");
-      alunosList.innerHTML = ""; // Limpa a tabela antes de preencher
-      data.forEach((aluno) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${aluno.id}</td>
-          <td>${aluno.nome}</td>
-          <td>${aluno.email}</td>
-          <td>${aluno.telefone}</td>
-          <td>${aluno.cpf}</td>
-          <td>${aluno.data_nascimento}</td>
-          <td>${aluno.curso}</td>
-          <td>
-            <button onclick="editarUsuario(${aluno.id})">Editar</button>
-            <button onclick="removerUsuario(${aluno.id})">Remover</button>
-          </td>
-        `;
-        alunosList.appendChild(row);
-      });
-    })
-    .catch((error) => console.error("Erro ao carregar alunos:", error));
-}
+// Defina a variável com o IP do servidor
+const API_BASE_URL = "http://18.231.112.104:5000"; // Altere aqui para mudar o IP
 
 // Função para listar os alunos
 function listarAlunos() {
-  fetch("http://localhost:5000/alunos")
+  fetch(`${API_BASE_URL}/alunos`)
     .then((response) => response.json())
     .then((data) => {
       const alunosList = document.getElementById("alunos-lista");
@@ -79,7 +54,7 @@ function salvarEdicao(id) {
     curso: document.getElementById(`curso-${id}`).value,
   };
 
-  fetch(`http://localhost:5000/alunos/${id}`, {
+  fetch(`${API_BASE_URL}/alunos/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(alunoAtualizado),
@@ -94,7 +69,7 @@ function salvarEdicao(id) {
 
 // Função para remover um aluno
 function removerUsuario(id) {
-  fetch(`http://localhost:5000/alunos/${id}`, { method: "DELETE" })
+  fetch(`${API_BASE_URL}/alunos/${id}`, { method: "DELETE" })
     .then((response) => response.json())
     .then((data) => {
       alert(data.mensagem);
