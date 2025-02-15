@@ -1,0 +1,130 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #593592;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Estilo do Cabeçalho */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #4c2c92;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Botão de Novo Cadastro */
+button {
+  background-color: #663399;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #5a2d85;
+}
+
+/* Estilo do Corpo Principal */
+main {
+  width: 110%;
+  max-width: 1550px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #4c2c92;
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+/* Estilo dos Botões da Tabela */
+table button {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table button:hover {
+  background-color: #45a049;
+}
+
+/* Modal (Se necessário) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
