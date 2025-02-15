@@ -54,7 +54,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
-  overflow-x: auto; /* Garante que o conteúdo se ajuste sem causar rolagem na tela principal */
+  overflow: hidden; /* Remove rolagem horizontal */
 }
 
 /* Tabela */
@@ -62,7 +62,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  table-layout: auto; /* Permite que as células ajustem o tamanho conforme necessário */
+  table-layout: fixed; /* Tabela com layout fixo para evitar overflow */
+  overflow: hidden;
+  word-wrap: break-word;
+  box-sizing: border-box; /* Garantir que o padding e border sejam incluídos na largura total */
 }
 
 /* Cabeçalho da Tabela */
@@ -71,6 +74,7 @@ td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   text-align: center;
+  white-space: nowrap; /* Impede que o conteúdo das células ultrapasse a largura */
 }
 
 th {
